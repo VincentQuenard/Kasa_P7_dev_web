@@ -1,5 +1,5 @@
 .cards_container {
-  background-color: $background_cards_home;
+  background-color:$grey_background;
   border-radius: 25px;
   margin-bottom: 40px;
 
@@ -40,7 +40,7 @@
       left: 4%;
       position: absolute;
       color: $white_color;
-       @media screen and (max-width: 450px) {
+       @media screen and (max-width: 550px) {
         top: 81%;
       }
     }

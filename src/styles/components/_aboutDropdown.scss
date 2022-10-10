@@ -1,0 +1,33 @@
+.about_container{
+    margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+
+  .collapse_container{
+    margin-bottom: 30px;
+ 
+  .collapse_header{
+    display: flex;
+    background-color: $red_color;
+    color: $white_color;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    h1{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+}
+.collapse_description{
+    background-color:$grey_background;
+    color: $red_color;
+    font-size: 1.5rem  ;
+    font-weight: 400;
+    padding: 20px;
+    border-radius: 0px 0px 5px 5px;
+} }
+}
+
+
+

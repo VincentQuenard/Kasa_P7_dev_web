@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React /*, { useEffect } */ from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 import locations from '../data/logements.json'
 import Thumb from './Thumb';
 

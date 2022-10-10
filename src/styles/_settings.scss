@@ -4,7 +4,7 @@ $font-used: 'Montserrat', sans-serif;
 $red_color: #ff6060;
 $white_color: #ffffff;
 $black_color: #000000;
-$background_cards_home : #F6F6F6;
+$grey_background : #F7F7F7;
 
 *,
 *::before,
@@ -18,7 +18,7 @@ body {
   font-family: $font-used;
   font-weight: 500;
   font-size: 16px;
-  padding: 30px 60px;
+  padding: 60px 60px;
   // max-width: 1600px;
   margin: 0 auto;
   height: 100vh;
