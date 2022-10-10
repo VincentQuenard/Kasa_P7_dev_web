@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// LOGIQUE ROUTES ICI
+//On importe après avoir installé react router dom les composants pour faire le routage de nos pages
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//On importe nos composants des pages 
+import Home from './pages/Home';
+import Lodging from './pages/Lodging';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/about' element={<About />} />
+        <Route exact path='/lodging/:id' element={<Lodging />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
