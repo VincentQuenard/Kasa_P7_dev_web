@@ -1,7 +1,11 @@
 .about_container{
-    margin-left: auto;
-  margin-right: auto;
+   
+  margin: 4rem auto 4rem auto;
   width: 85%;
+   @media screen and (max-width: 950px) {
+        width: 100%;
+       
+      }
 
   .collapse_container{
     margin-bottom: 30px;
@@ -16,6 +20,9 @@
     h1{
         font-size: 1.5rem;
         font-weight: 500;
+         @media screen and (max-width: 600px) {
+         font-size: 0.8125rem;
+      }
     }
 
 }
@@ -26,6 +33,9 @@
     font-weight: 400;
     padding: 20px;
     border-radius: 0px 0px 5px 5px;
+    @media screen and (max-width: 600px) {
+         font-size: 0.75rem;
+      }
 } }
 }
 
