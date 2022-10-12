@@ -7,8 +7,7 @@ const host = document.location;
 
 const Banner = () => {
   let isHomePage = host.pathname === '/';
- // let imgSrc = isHomePage ? img_home : img_about;
-  
+   
   return (
     <div className={isHomePage ? 'banner  banner_home_sm' : 'banner'}>
       <div className={isHomePage ? 'banner_home' : 'banner_about'}></div>

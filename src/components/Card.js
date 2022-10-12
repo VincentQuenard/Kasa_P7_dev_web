@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-//import locations from '../data/logements.json'
 import Thumb from './Thumb';
 
 const Card = () => {

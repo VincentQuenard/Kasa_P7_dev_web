@@ -32,6 +32,10 @@
    }
   a {
     color: $red_color;
+    transition: all 0.7s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
   }
   .active {
     border-bottom: 2px solid $red_color;
