@@ -1,5 +1,5 @@
 .about_container {
-  margin: 4rem auto 4rem auto;
+  margin: 4rem auto ;
   width: 85%;
   @media screen and (max-width: 950px) {
     width: 100%;
@@ -24,6 +24,9 @@
       }
       .collapse_arrow {
         transition: 0.8s;
+         @media screen and (max-width: 600px) {
+          width: 1rem;
+        }
       }
       .collapse_arrow_open {
         transform: rotate(180deg);
@@ -36,12 +39,22 @@
       font-weight: 400;
       padding: 20px;
       border-radius: 0px 0px 5px 5px;
-      //animation: slideMenu 10s ease-in-out forwards;
-      transition: all 10s ease-out;
+      animation: slide_description 1.2s ease-in-out forwards;
 
       @media screen and (max-width: 600px) {
         font-size: 0.75rem;
       }
     }
+  }
+}
+// Animation appararition douce de la description
+@keyframes slide_description {
+  0% {
+    // opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    // opacity: 1;
+    transform: translateY(0);
   }
 }

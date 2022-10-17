@@ -9,6 +9,7 @@ const Collapse = ({ title, description }) => {
         <h1 key={title}>{title}</h1>
 
         <img
+         
           onClick={() => setIsOpen(!isOpen)}
           className={
             isOpen ? 'collapse_arrow collapse_arrow_open' : 'collapse_arrow '

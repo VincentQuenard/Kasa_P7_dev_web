@@ -1,7 +1,4 @@
 import React from 'react';
-//import img_home from '../assets/banniere_home1.jpg';
-//import img_about from '../assets/banniere_about.jpg';
-
 
 const host = document.location;
 
