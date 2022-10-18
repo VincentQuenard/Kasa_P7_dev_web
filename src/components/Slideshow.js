@@ -3,7 +3,7 @@ import arrow from '../assets/arrow.svg';
 
 const Slideshow = ({ pictures }) => {
   const [currentPicture, setCurrentPicture] = useState(0);
-console.log(currentPicture)
+
   const arrayPicturesLength = pictures.length;
 
   function nextPicture() {
@@ -19,6 +19,7 @@ console.log(currentPicture)
   }
   //Si nb photo > 1 alors on affiche les flèches et le count
   //Le count pour afficher : current + 1 car index 1 = 0 / arrayPicturesLength
+  const hasMultiplePictures = arrayPicturesLength > 1;
   return (
     <div className='slideshow_container'>
       <img
@@ -27,7 +28,7 @@ console.log(currentPicture)
         alt='intérieur'
       />
 
-      {arrayPicturesLength > 1 && (
+      {hasMultiplePictures && (
         <img
           className='arrow_right'
           onClick={() => {
@@ -37,7 +38,7 @@ console.log(currentPicture)
           alt='Next slide'
         />
       )}
-      {arrayPicturesLength > 1 && (
+      {hasMultiplePictures && (
         <img
           className='arrow_left'
           onClick={() => {
@@ -47,7 +48,7 @@ console.log(currentPicture)
           alt='previous slide'
         />
       )}
-      {arrayPicturesLength > 1 && (
+      {hasMultiplePictures && (
         <p className='count'>
           {currentPicture + 1}/{arrayPicturesLength}
         </p>
