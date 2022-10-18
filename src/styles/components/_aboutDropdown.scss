@@ -5,7 +5,20 @@
     width: 100%;
   }
 
-  .collapse_container {
+  
+}
+// Animation appararition douce de la description
+@keyframes slide_description {
+  0% {
+    // opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    // opacity: 1;
+    transform: translateY(0);
+  }
+}
+.collapse_container {
     margin-bottom: 30px;
 
     .collapse_header {
@@ -46,15 +59,3 @@
       }
     }
   }
-}
-// Animation appararition douce de la description
-@keyframes slide_description {
-  0% {
-    // opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    // opacity: 1;
-    transform: translateY(0);
-  }
-}

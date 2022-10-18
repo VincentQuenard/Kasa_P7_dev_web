@@ -4,38 +4,45 @@ import axios from 'axios';
 
 import LodgingDescription from '../components/LodgingDescription';
 import Slideshow from '../components/Slideshow';
+import Collapse from '../components/Collapse';
 
 const Lodging = () => {
   const { id } = useParams();
-  const [locationById, setlocation] = useState(null);
+  const [locations, setLocations] = useState([]);
   const getData = () => {
-    axios.get('../logements.json').then((res) => {
-      const locationById = res.data.find((location) => location.id === id);
-      setlocation(locationById);
-    });
+    axios.get('../logements.json').then((res) => setLocations(res.data));
   };
   useEffect(() => {
     getData();
-  });
+  }, []);
+  //
+  const locationById = locations.find((location) => location.id === id);
 
-  // const locations = useContext(ApiContext);
-  // On récupère l'id de la location dans l'url grace à useParams de react router
-
-  //composant slideshow paramètré avec props pictures donc pictures = tableau filtré avec id match et on recupère les photos
+  //composants paramètrés avec props des composants enfants
   return (
-    <div>
+    <section>
       {locationById && (
-        <Slideshow key={locationById.id} pictures={locationById.pictures} />
+        <div>
+          <Slideshow key={locationById.id} pictures={locationById.pictures} />
+          <LodgingDescription
+            title={locationById.title}
+            location={locationById.location}
+            name={locationById.host.name}
+            picture={locationById.host.picture}
+          />
+          <div className='collapse_group_container'>
+            <Collapse
+              title='Description'
+              description={locationById.description}
+            />
+            <Collapse
+              title='Equipements'
+              description={locationById.description}
+            />
+          </div>
+        </div>
       )}
-      {locationById && (
-        <LodgingDescription
-          title={locationById.title}
-          location={locationById.location}
-          name={locationById.host.name}
-          picture={locationById.host.picture}
-        />
-      )}
-    </div>
+    </section>
   );
 };
 

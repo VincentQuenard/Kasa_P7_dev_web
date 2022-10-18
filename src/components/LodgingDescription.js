@@ -6,7 +6,7 @@ const LodgingDescription = ({ title, location, name, picture }) => {
       <div className='rental'>
         <h1>{title}</h1>
         <p> {location}</p>
-        <ul>
+        <ul className='tags'>
           <li>tag1</li>
           <li>tag2</li>
           <li>tag3</li>
