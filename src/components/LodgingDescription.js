@@ -1,29 +1,25 @@
 import React from 'react';
+import Stars from './Stars';
 
-const LodgingDescription = ({ title, location, name, picture }) => {
+const LodgingDescription = ({ title, location, name, picture, tags, apiRating }) => {
+  
   return (
     <div className='rental_owner'>
       <div className='rental'>
         <h1>{title}</h1>
         <p> {location}</p>
         <ul className='tags'>
-          <li>tag1</li>
-          <li>tag2</li>
-          <li>tag3</li>
+          {tags.map((tag) => (
+            <li key={tag} className='tag'>{tag}</li>
+          ))}
         </ul>
       </div>
       <div className='owner'>
         <div className='host'>
           <p>{name}</p>
           <img src={picture} alt='propriétaire' />
-          <ul>
-            <li>X</li>
-            <li>X</li>
-            <li>X</li>
-            <li>X</li>
-            <li>X</li>
-          </ul>
         </div>
+       <Stars apiRating={apiRating}/>
       </div>
     </div>
   );

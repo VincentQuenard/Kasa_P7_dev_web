@@ -29,6 +29,8 @@ const Lodging = () => {
             location={locationById.location}
             name={locationById.host.name}
             picture={locationById.host.picture}
+            tags={locationById.tags}
+            apiRating={locationById.rating}
           />
           <div className='collapse_group_container'>
             <Collapse
@@ -37,7 +39,11 @@ const Lodging = () => {
             />
             <Collapse
               title='Equipements'
-              description={locationById.description}
+              description={locationById.equipments.map((equipment) => (
+                
+                  <p className='equipments'>{equipment}</p>
+              
+              ))}
             />
           </div>
         </div>
