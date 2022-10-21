@@ -1,17 +1,35 @@
 .collapse_group_container{
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 800px) {
+        display: block;
+    }
 .collapse_container{
     width: 47%;
+    @media screen and (max-width: 800px) {
+       width: 100%;
+    }
 
 .collapse_header{
     border-radius: 10px;
+     @media screen and (max-width: 650px) {
+         border-radius: 5px;
+     }
 h1{
     font-size: 1.125rem;
+    @media screen and (max-width: 650px) {
+         font-size: 0.8125rem;
+     }
 }
 }
 .collapse_description{
      font-size: 1.125rem;
+     line-height: 1.6rem;
+     @media screen and (max-width: 650px) {
+        font-size: 0.75rem;
+         line-height: 1.07rem;
+     }
 }
 
 }

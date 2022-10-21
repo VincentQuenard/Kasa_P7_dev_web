@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
 import LodgingDescription from '../components/LodgingDescription';
 import Slideshow from '../components/Slideshow';
 import Collapse from '../components/Collapse';
+import NotFound from './NotFound';
 
 const Lodging = () => {
   const { id } = useParams();
@@ -15,8 +15,16 @@ const Lodging = () => {
   useEffect(() => {
     getData();
   }, []);
-  //
+
+  if (locations.length <= 0 || !locations) {
+    return <span>........</span>;
+  }
+
   const locationById = locations.find((location) => location.id === id);
+  console.log(locationById);
+  if(!locationById){
+    return <NotFound/>
+  }
 
   //composants paramètrés avec props des composants enfants
   return (
@@ -39,11 +47,17 @@ const Lodging = () => {
             />
             <Collapse
               title='Equipements'
-              description={locationById.equipments.map((equipment) => (
-                
-                  <p className='equipments'>{equipment}</p>
-              
-              ))}
+              equipment={
+                locationById.equipments && (
+                  <ul>
+                    {locationById.equipments.map((equipment) => (
+                      <li key={equipment} className='equipments'>
+                        {equipment}
+                      </li>
+                    ))}
+                  </ul>
+                )
+              }
             />
           </div>
         </div>

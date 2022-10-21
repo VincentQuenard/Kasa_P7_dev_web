@@ -2,7 +2,7 @@
   position: relative;
   height: 415px;
   margin: 2rem 0;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 650px) {
     height: 255px;
   }
   .slideshow_img {
@@ -17,7 +17,7 @@
     right: 1%;
     top: 50%;
     rotate: 270deg;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
     width: 25px;
   }}
 
@@ -27,7 +27,7 @@
     left: 1%;
     top: 50%;
     rotate: 90deg;
-     @media screen and (max-width: 600px) {
+     @media screen and (max-width: 650px) {
     width: 25px;
   }
   }
@@ -38,7 +38,7 @@
    color: $white_color;
    bottom: 6%;
    right: 50%;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
     display: none;
   }
   }

@@ -31,13 +31,13 @@
       h1 {
         font-size: 1.5rem;
         font-weight: 500;
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 650px) {
           font-size: 0.8125rem;
         }
       }
       .collapse_arrow {
         transition: 0.8s;
-         @media screen and (max-width: 600px) {
+         @media screen and (max-width: 650px) {
           width: 1rem;
         }
       }
@@ -52,10 +52,12 @@
       font-weight: 400;
       padding: 20px;
       border-radius: 0px 0px 5px 5px;
+      line-height: 2.14rem;
       animation: slide_description 1.2s ease-in-out forwards;
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 650px) {
         font-size: 0.75rem;
+        line-height: 1.07rem;
       }
     }
   }
