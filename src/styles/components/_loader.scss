@@ -1,0 +1,91 @@
+/*Loader spinner au chargement de la page index.html*/
+.loader {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 81%;
+  justify-content: center;
+  align-items: center;
+  background-color: $red_color;
+  position: fixed;
+  z-index: 200;
+  animation: apparition 0.2s 0.7s ease-in-out forwards;
+}
+
+/*Mise en forme de la phrase du loader*/
+.loader_titre {
+  font-family: $font-used;
+  color: $white_color;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  padding-bottom: 50px;
+}
+
+/*Mise en place du conteneur des balles et des 3 balles rebondissantes*/
+.LoaderBalls {
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item1 {
+    $anim-ease: cubic-bezier(0.6, 0.05, 0.15, 0.95);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $black_color;
+    animation: balles 0.5s alternate infinite $anim-ease;
+  }
+
+  &__item2 {
+    $anim-ease: cubic-bezier(0.6, 0.05, 0.15, 0.95);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $grey_background;
+    animation: balles 0.3s alternate infinite $anim-ease;
+  }
+
+  &__item3 {
+    $anim-ease: cubic-bezier(0.6, 0.05, 0.15, 0.95);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $white_color;
+    animation: balles 0.4s alternate infinite $anim-ease;
+  }
+}
+/*Gestion apparition et disparition loader*/
+@keyframes apparition {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+
+/*Rebond des balles du loader*/
+@keyframes balles {
+  0% {
+    transform: translate3d(0, 10px, 0) scale(1.2, 0.85);
+  }
+
+  100% {
+    transform: translate3d(0, -20px, 0) scale(0.9, 1.1);
+  }
+}
+
+/*Effet d'apparition progessive des menus par groupes*/
+@keyframes slideMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

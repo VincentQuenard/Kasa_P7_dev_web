@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import Lodging from './pages/Lodging';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-
 import Footer from './components/Footer';
 import Header from './components/Header';
 
@@ -20,7 +19,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/about' element={<About />} />
-          <Route exact path='/lodging/:id' element={<Lodging />} />
+          <Route path='/lodging/:id' element={<Lodging />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
