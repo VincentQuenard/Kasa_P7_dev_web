@@ -7,7 +7,11 @@ const Banner = () => {
 
   return (
     <div className={isHomePage ? 'banner  banner_home_sm' : 'banner'}>
-      <div className={isHomePage ? 'banner_home' : 'banner_about'}></div>
+      <div
+        className={
+          isHomePage ? 'banner_img banner_home' : 'banner_img banner_about'
+        }
+      ></div>
       {isHomePage && <h1>Chez vous, partout et ailleurs</h1>}
     </div>
   );

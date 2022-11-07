@@ -13,7 +13,7 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -22,9 +22,9 @@ function App() {
           <Route path='/lodging/:id' element={<Lodging />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
-    </div>
+    </>
   );
 }
 

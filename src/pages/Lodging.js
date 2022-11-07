@@ -1,92 +1,75 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import LodgingDescription from '../components/LodgingDescription';
 import Slideshow from '../components/Slideshow';
 import Collapse from '../components/Collapse';
-import NotFound from './NotFound';
+
 
 const Lodging = () => {
   const { id } = useParams();
   const [locations, setLocations] = useState([]);
+  /**
+   * GetData() is a function that uses axios to get data from a json file and then sets the data to the
+   * locations variable.
+   */
   const getData = () => {
     axios.get('../logements.json').then((res) => setLocations(res.data));
   };
+  /* It's getting the data from the json file. */
   useEffect(() => {
     getData();
   }, []);
 
-/*const { id } = useParams();
-  const [locationById, setlocation] = useState(null);
-  const getData = () => {
-    axios.get('../logements.json').then((res) => {
-      const locationById = res.data.find((location) => location.id === id);
-      setlocation(locationById);
-    });
-  };
-  useEffect(() => {
-    getData();
-  }, [locationById]);*/
-
-
+  /* It's displaying a progress bar if the locations variable is empty. */
   if (locations.length <= 0 || !locations) {
-    return <span>........</span>;
+    return <progress></progress>;
   }
 
+  /* It's finding the location by id. */
   const locationById = locations.find((location) => location.id === id);
-  console.log(locationById);
+  
+ /* It's checking if the locationById variable is empty. If it is, it's redirecting to the 404 page. */
   if (!locationById) {
-    return <NotFound />;
+    return <Navigate to='/404' />;
   }
 
   //composants paramètrés avec props des composants enfants
   return (
     <section>
-      <div className='loader'>
-        <h1 className='loader_titre'>Loading</h1>
-        <div className='LoaderBalls'>
-          <div className='LoaderBalls__item1'></div>
-          <div className='LoaderBalls__item2'></div>
-          <div className='LoaderBalls__item3'></div>
+      {locationById && (
+        <div>
+          <Slideshow key={locationById.id} pictures={locationById.pictures} />
+          <LodgingDescription
+            title={locationById.title}
+            location={locationById.location}
+            name={locationById.host.name}
+            picture={locationById.host.picture}
+            tags={locationById.tags}
+            apiRating={locationById.rating}
+          />
+          <div className='collapse_group_container'>
+            <Collapse
+              title='Description'
+              description={locationById.description}
+            />
+            <Collapse
+              title='Equipements'
+              equipment={
+                locationById.equipments && (
+                  <ul>
+                    {locationById.equipments.map((equipment) => (
+                      <li key={equipment} className='equipments'>
+                        {equipment}
+                      </li>
+                    ))}
+                  </ul>
+                )
+              }
+            />
+          </div>
         </div>
-      </div>
-      {locationById && (
-        <Slideshow key={locationById.id} pictures={locationById.pictures} />
       )}
-      {locationById && (
-        <LodgingDescription
-          title={locationById.title}
-          location={locationById.location}
-          name={locationById.host.name}
-          picture={locationById.host.picture}
-          tags={locationById.tags}
-          apiRating={locationById.rating}
-        />
-      )}
-      <div className='collapse_group_container'>
-        {locationById && (
-          <Collapse
-            title='Description'
-            description={locationById.description}
-          />
-        )}
-        {locationById && (
-          <Collapse
-            title='Equipements'
-            equipment={
-              locationById.equipments && (
-                <ul>
-                  {locationById.equipments.map((equipment) => (
-                    <li key={equipment} className='equipments'>
-                      {equipment}
-                    </li>
-                  ))}
-                </ul>
-              )
-            }
-          />
-        )}
-      </div>
     </section>
   );
 };
