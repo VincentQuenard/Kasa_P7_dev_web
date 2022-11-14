@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import arrow from '../assets/arrow.svg';
+import arrow from '../../assets/arrow.svg';
 
 const Slideshow = ({ pictures }) => {
   const [currentPicture, setCurrentPicture] = useState(0);

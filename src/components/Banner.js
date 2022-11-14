@@ -1,8 +1,9 @@
 import React from 'react';
 
-const host = document.location;
-
+/* Getting the current url. */
+const host = window.location;
 const Banner = () => {
+  /* Checking if the current url is the home page. */
   let isHomePage = host.pathname === '/';
 
   return (

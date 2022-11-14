@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import LodgingDescription from '../components/LodgingDescription';
-import Slideshow from '../components/Slideshow';
+import LodgingDescription from '../components/Lodging/LodgingDescription';
+import Slideshow from '../components/Lodging/Slideshow';
 import Collapse from '../components/Collapse';
-
 
 const Lodging = () => {
   const { id } = useParams();
@@ -28,8 +27,8 @@ const Lodging = () => {
 
   /* It's finding the location by id. */
   const locationById = locations.find((location) => location.id === id);
-  
- /* It's checking if the locationById variable is empty. If it is, it's redirecting to the 404 page. */
+
+  /* It's checking if the locationById variable is empty. If it is, it's redirecting to the 404 page. */
   if (!locationById) {
     return <Navigate to='/404' />;
   }

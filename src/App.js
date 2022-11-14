@@ -1,5 +1,5 @@
-// LOGIQUE ROUTES ICI
-import React  from 'react';
+
+import React from 'react';
 
 //On importe après avoir installé react router dom les composants pour faire le routage de nos pages
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -9,7 +9,7 @@ import Lodging from './pages/Lodging';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 
 function App() {
   return (
