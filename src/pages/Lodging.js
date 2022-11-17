@@ -7,7 +7,7 @@ import Collapse from '../components/Collapse';
 
 const Lodging = () => {
   const { id } = useParams();
-  const [locations, setLocations] = useState([]);
+   const [locations, setLocations] = useState([]);
   /**
    * GetData() is a function that uses axios to get data from a json file and then sets the data to the
    * locations variable.
@@ -24,7 +24,6 @@ const Lodging = () => {
   if (locations.length <= 0 || !locations) {
     return <progress></progress>;
   }
-
   /* It's finding the location by id. */
   const locationById = locations.find((location) => location.id === id);
 

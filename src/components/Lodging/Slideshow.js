@@ -3,15 +3,12 @@ import arrow from '../../assets/arrow.svg';
 
 const Slideshow = ({ pictures }) => {
   const [currentPicture, setCurrentPicture] = useState(0);
-
   const arrayPicturesLength = pictures.length;
-
   function nextPicture() {
     setCurrentPicture(
       currentPicture === arrayPicturesLength - 1 ? 0 : currentPicture + 1
     );
   }
-
   function previousPicture() {
     setCurrentPicture(
       currentPicture === 0 ? arrayPicturesLength - 1 : currentPicture - 1
