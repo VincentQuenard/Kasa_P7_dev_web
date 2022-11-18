@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import arrow from '../../assets/arrow.svg';
 
-const Slideshow = ({ pictures }) => {
+const Gallery = ({ pictures }) => {
   const [currentPicture, setCurrentPicture] = useState(0);
   const arrayPicturesLength = pictures.length;
   function nextPicture() {
@@ -54,5 +54,5 @@ const Slideshow = ({ pictures }) => {
   );
 };
 
-export default Slideshow;
+export default Gallery;
 

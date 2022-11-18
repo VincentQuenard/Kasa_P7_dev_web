@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import arrow from '../assets/arrow.svg';
 
-const Collapse = ({ title, description, equipment }) => {
+const Collapse = ({ title, description }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='collapse_container'>
@@ -18,7 +18,7 @@ const Collapse = ({ title, description, equipment }) => {
         />
       </div>
       {isOpen && (
-        <div className='collapse_description'>{description} {equipment}</div>
+        <div className='collapse_description'>{description}</div>
       )}
     </div>
   );
